@@ -9,7 +9,7 @@ import android.widget.LinearLayout
 fun View.setState(stateType: Int):View {
     Log.e("STATE_CHANGED", "State Type  =  $stateType")
     val stateConfig = StatesConfigFactory.instance
-    val stateView = stateConfig.getStateView(stateType)
+    val stateView = stateConfig!!.getStateView(stateType)
     var parentView: ViewGroup? = null
     if (this.parent is ViewGroup && this.parent !is RecyclerView) {
         parentView = this.parent as ViewGroup

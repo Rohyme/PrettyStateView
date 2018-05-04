@@ -22,6 +22,7 @@
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:textSize="10sp"
             android:layout_weight="1"
             android:text="Loading"
             android:onClick="onLoadingClicked"
@@ -30,6 +31,7 @@
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:textSize="10sp"
             android:layout_weight="1"
             android:onClick="onErrorClicked"
             android:text="Error" />
@@ -37,6 +39,7 @@
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:textSize="10sp"
             android:layout_weight="1"
             android:onClick="onEmptyClicked"
             android:text="empty" />
@@ -44,9 +47,18 @@
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:textSize="10sp"
             android:layout_weight="1"
             android:onClick="onNormalClicked"
             android:text="Normal" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onCustomClicked"
+            android:textSize="10sp"
+            android:text="custom" />
 
     </LinearLayout>
 </LinearLayout>

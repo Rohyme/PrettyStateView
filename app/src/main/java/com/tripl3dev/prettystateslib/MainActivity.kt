@@ -2,6 +2,7 @@ package com.tripl3dev.prettystateslib
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
 import com.tripl3dev.prettystates.StatesConfigFactory
 import com.tripl3dev.prettystates.StatesConstants
@@ -9,12 +10,18 @@ import com.tripl3dev.prettystates.setState
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+    lateinit var testingView: View
+    lateinit var stateConf: StatesConfigFactory
+    val CUSTOM_STATE = 23232
 
-    lateinit var testingView :View
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         testingView = testingTextView
+        stateConf = StatesConfigFactory.get()
+        stateConf.addStateView(CUSTOM_STATE, LayoutInflater.from(this).inflate(R.layout.custom_state_view, null, false))
+
+
     }
 
     fun onLoadingClicked(view: View) {
@@ -32,7 +39,10 @@ class MainActivity : AppCompatActivity() {
 
     fun onNormalClicked(view: View) {
         testingView.setState(StatesConstants.NORMAL_STATE)
+    }
 
+    fun onCustomClicked(view: View) {
+        testingView.setState(CUSTOM_STATE)
     }
 
 

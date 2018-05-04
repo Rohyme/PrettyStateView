@@ -12,17 +12,18 @@ class StatesConfigFactory private constructor() {
 
 
     companion object {
-      internal lateinit var instance: StatesConfigFactory
+        internal var instance: StatesConfigFactory? = null
         fun intialize(): StatesConfigFactory {
-            instance = StatesConfigFactory()
-            return instance
+            if (instance == null)
+                instance = StatesConfigFactory()
+            return instance as StatesConfigFactory
         }
 
-        fun get():StatesConfigFactory{
-            if (!this::instance.isInitialized){
+        fun get(): StatesConfigFactory {
+            if (instance == null) {
                 throw Throwable("Please use intialize fun in App Class OnCreate Method or Before get Instance Method")
-            }else{
-                return instance
+            } else {
+                return instance as StatesConfigFactory
             }
         }
 
