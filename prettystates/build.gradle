@@ -2,6 +2,9 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'com.github.dcendents.android-maven'
+group='com.github.Tripl3Dev'
+version='1.0'
 
 android {
     compileSdkVersion 27
@@ -36,7 +39,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.android.support:recyclerview-v7:27.1.1'
-
 
 }
 
