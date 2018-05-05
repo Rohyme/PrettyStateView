@@ -2,6 +2,10 @@
 
 PrettyStateView is a light library to set view states such As Loading , Error , Empty or even Custom views You make .
 
+
+<img src="https://github.com/Tripl3Dev/PrettyStateView/blob/master/Example.gif" width="200">
+
+
 # Installation
 - #### Step 1. Add the JitPack repository to your build file 
 
