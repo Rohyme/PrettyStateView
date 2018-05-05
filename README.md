@@ -72,7 +72,7 @@ allprojects {
 
 - SetState(StateConstantType : Integer) method return the stateView  if u wanna to use the view to make action or anything 
 
-# Licence
+# License
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
