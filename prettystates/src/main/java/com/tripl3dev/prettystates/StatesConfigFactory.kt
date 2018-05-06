@@ -1,9 +1,10 @@
 package com.tripl3dev.prettystates
 
 import android.content.Context
-import android.support.annotation.IntegerRes
 import android.view.LayoutInflater
 import android.view.View
+
+
 
 class StatesConfigFactory private constructor() {
     private var viewsMap: HashMap<Int, View> = HashMap()
@@ -35,7 +36,7 @@ class StatesConfigFactory private constructor() {
     }
 
     fun addStateView(viewStatus: Int, customLayout: Int, context: Context) {
-        viewsMap[viewStatus] = LayoutInflater.from(context.applicationContext).inflate(R.layout.prettystates_default_empty_view, null, false)
+        viewsMap[viewStatus] = LayoutInflater.from(context.applicationContext).inflate(customLayout, null, false)
     }
 
 
