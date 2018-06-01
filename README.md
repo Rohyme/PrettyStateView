@@ -31,7 +31,7 @@ allprojects {
   # Usage 
 -  Intialize the  StatesConfigFactory singelton 
  
-    ```
+    ```kotlin
     // App class onCreate
      override fun onCreate() {
         super.onCreate()
@@ -39,10 +39,10 @@ allprojects {
         }
     ```
 - You can initialize default views for Error , Loading and Empty view comming with the lib 
-  by using   ```initDefaultViews(this)```
+  by using   ``` initDefaultViews(this)```
 
 - You can init your own layouts by using 
-     ```
+     ```kotlin
       StatesConfigFactory.intialize()
             .setDefaultEmptyView(EmptyView)
             .setDefaultErrorView(ErrorView)
@@ -51,28 +51,42 @@ allprojects {
  
  - Add your custom View while intializing stateFactory 
  
-     ``` StatesConfigFactory.intialize().addStateView(YOUR_CUSTOM_STATE_VIEW_INTEGER_CONSTANT,yourCustomView) ```
+```kotlin 
+StatesConfigFactory.intialize().addStateView(YOUR_CUSTOM_STATE_VIEW_INTEGER_CONSTANT,yourCustomView) 
+```
 
 - Add your custome view later in your activity or fragment 
 
-    ```StatesConfigFactory.get().addStateView(YOUR_CUSTOM_STATE_VIEW_INTEGER_CONSTANT,yourCustomView)```
+    ```kotlin
+    StatesConfigFactory.get().addStateView(YOUR_CUSTOM_STATE_VIEW_INTEGER_CONSTANT,yourCustomView)
+    ```
 
 - finally you can use set The stateView to any view you want just with
  
-    ```testingView.setState(StatesConstants.EMPTY_STATE)```
+    ```kotlin
+    testingView.setState(StatesConstants.EMPTY_STATE)
+    ```
     
-    ```testingView.setState(StatesConstants.LOADING_STATE)```
+    ```kotlin
+    testingView.setState(StatesConstants.LOADING_STATE)
+    ```
     
-    ```testingView.setState(StatesConstants.ERROR_STATE)```
+    ```kotlin
+    testingView.setState(StatesConstants.ERROR_STATE)
+    ```
     
-    ```testingView.setState(YOUR_CUSTOM_STATE_VIEW_INTEGER_CONSTANT)```
+    ```kotlin
+    testingView.setState(YOUR_CUSTOM_STATE_VIEW_INTEGER_CONSTANT)
+    ```
 
     * Note : Your view shouldn't be wrap content (Height or Width)
      
 
 - You can go back to the content states (Your original state) with 
   
-    ```testingView.setState(StatesConstants.NORMAL_STATE)```
+    ```kotlin
+    testingView.setState(StatesConstants.NORMAL_STATE)
+    ```
 
 - SetState(StateConstantType : Integer) method return the stateView  if u wanna to use the view to make action or anything 
 
