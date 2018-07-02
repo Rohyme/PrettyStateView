@@ -10,7 +10,7 @@ import android.widget.LinearLayout
 
 
 fun View.setState(stateType: Int): View {
-    Log.e("STATE_CHANGED", "State Type  =  $stateType")
+    Log.i("STATE_CHANGED", "State Type  =  $stateType")
     val stateConfig = StatesConfigFactory.instance
     lateinit var stateView: View
     stateView = if (stateType == StatesConstants.NORMAL_STATE) {
