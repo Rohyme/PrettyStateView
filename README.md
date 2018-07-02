@@ -54,9 +54,9 @@ allprojects {
  
  - Add your custom View while intializing stateFactory 
  
-```kotlin 
-StatesConfigFactory.intialize().addStateView(YOUR_CUSTOM_STATE_VIEW_INTEGER_CONSTANT,R.layout.your_custom_layout) 
-```
+   ```kotlin 
+   StatesConfigFactory.intialize().addStateView(YOUR_CUSTOM_STATE_VIEW_INTEGER_CONSTANT,R.layout.your_custom_layout) 
+   ```
 
 - Add your custome view later in your activity or fragment 
 
@@ -93,8 +93,8 @@ StatesConfigFactory.intialize().addStateView(YOUR_CUSTOM_STATE_VIEW_INTEGER_CONS
 
 - You can get view back to make any action on it 
  ```kotlin 
-SetState(StateConstantType : Integer) : View
-```
+    SetState(StateConstantType : Integer) : View
+ ```
 
 
 # License
