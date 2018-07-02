@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         testingView = testingTextView
         stateConf = StatesConfigFactory.get()
-        stateConf.addStateView(CUSTOM_STATE, R.layout.custom_state_view,this)
+        stateConf.addStateView(CUSTOM_STATE, R.layout.custom_state_view)
 
     }
 

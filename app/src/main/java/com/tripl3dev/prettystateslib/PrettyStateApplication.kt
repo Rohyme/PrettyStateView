@@ -7,6 +7,6 @@ class PrettyStateApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        StatesConfigFactory.intialize().initDefaultViews(this)
+        StatesConfigFactory.intialize().initDefaultViews()
     }
 }

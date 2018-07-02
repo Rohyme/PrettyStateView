@@ -1,6 +1,6 @@
 package com.tripl3dev.prettystates
 
-class StatesConstants{
+class StatesConstants {
     companion object {
         const val LOADING_STATE = -2731992
         const val ERROR_STATE = -2631992

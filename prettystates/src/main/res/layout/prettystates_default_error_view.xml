@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
+    android:gravity="center"
+    android:orientation="vertical">
+
     <TextView
+        android:id="@+id/textError"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="@string/state_some_thing_went_wrong"
-        />
+        android:text="@string/state_some_thing_went_wrong" />
+
     <Button
+        android:id="@+id/textButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/retry"
         android:layout_marginTop="10dp"
+        android:text="@string/retry"
 
         />
 
