@@ -4,7 +4,7 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'com.github.dcendents.android-maven'
 group='com.github.Tripl3Dev'
-version='2.0.0'
+version='2.1.0'
 
 android {
     compileSdkVersion 27
@@ -12,7 +12,7 @@ android {
 
 
     defaultConfig {
-        minSdkVersion 19
+        minSdkVersion 17
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
