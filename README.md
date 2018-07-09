@@ -23,8 +23,9 @@ allprojects {
 - #### Step 2. Add the dependency
  ```
  	dependencies {
-	        implementation 'com.github.Tripl3Dev:PrettyStateView:1.0'
+	        implementation 'com.github.Tripl3Dev:PrettyStateView:2.0.0'
 	}
+
   ```
   
   
@@ -35,48 +36,50 @@ allprojects {
     // App class onCreate
      override fun onCreate() {
         super.onCreate()
-        StatesConfigFactory.intialize().initDefaultViews(this)
+        StatesConfigFactory.intialize().initDefaultViews()
         }
     ```
-- You can initialize default views for Error , Loading and Empty view comming with the lib 
-  by using   ``` initDefaultViews(this)```
-
+- You should initialize default views or just the normal view  :
+  use ``` initDefaultViews()``` for intialize Normal , Error , Loading and Empty default layouts comming with the lib    
+  use ```initViews()``` to intialize just Normal View 
+  
 - You can init your own layouts by using 
      ```kotlin
       StatesConfigFactory.intialize()
-            .setDefaultEmptyView(EmptyView)
-            .setDefaultErrorView(ErrorView)
-            .setDefaultLoadingView(LoadingView)
+      	    .initViews()
+            .setDefaultEmptyView(R.layout.empty_view)
+            .setDefaultErrorView(R.layout.error_view)
+            .setDefaultLoadingView(R.layout.loading_view)
      ```
  
  - Add your custom View while intializing stateFactory 
  
-```kotlin 
-StatesConfigFactory.intialize().addStateView(YOUR_CUSTOM_STATE_VIEW_INTEGER_CONSTANT,yourCustomView) 
-```
+   ```kotlin 
+   StatesConfigFactory.intialize().addStateView(YOUR_CUSTOM_STATE_VIEW_INTEGER_CONSTANT,R.layout.your_custom_layout) 
+   ```
 
 - Add your custome view later in your activity or fragment 
 
     ```kotlin
-    StatesConfigFactory.get().addStateView(YOUR_CUSTOM_STATE_VIEW_INTEGER_CONSTANT,yourCustomView)
+    StatesConfigFactory.get().addStateView(YOUR_CUSTOM_STATE_VIEW_INTEGER_CONSTANT,R.layout.your_custom_layout)
     ```
 
 - finally you can use set The stateView to any view you want just with
  
     ```kotlin
-    testingView.setState(StatesConstants.EMPTY_STATE)
+    yourView.setState(StatesConstants.EMPTY_STATE)
     ```
     
     ```kotlin
-    testingView.setState(StatesConstants.LOADING_STATE)
+    yourView.setState(StatesConstants.LOADING_STATE)
     ```
     
     ```kotlin
-    testingView.setState(StatesConstants.ERROR_STATE)
+    yourView.setState(StatesConstants.ERROR_STATE)
     ```
     
     ```kotlin
-    testingView.setState(YOUR_CUSTOM_STATE_VIEW_INTEGER_CONSTANT)
+    yourView.setState(YOUR_CUSTOM_STATE_VIEW_INTEGER_CONSTANT)
     ```
 
     * Note : Your view shouldn't be wrap content (Height or Width)
@@ -85,10 +88,14 @@ StatesConfigFactory.intialize().addStateView(YOUR_CUSTOM_STATE_VIEW_INTEGER_CONS
 - You can go back to the content states (Your original state) with 
   
     ```kotlin
-    testingView.setState(StatesConstants.NORMAL_STATE)
+    yourView.setState(StatesConstants.NORMAL_STATE)
     ```
 
-- SetState(StateConstantType : Integer) method return the stateView  if u wanna to use the view to make action or anything 
+- You can get view back to make any action on it 
+ ```kotlin 
+    SetState(StateConstantType : Integer) : View
+ ```
+
 
 # License
 Licensed under the Apache License, Version 2.0 (the "License");
