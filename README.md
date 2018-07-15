@@ -23,7 +23,7 @@ allprojects {
 - #### Step 2. Add the dependency
  ```
  	dependencies {
-	        implementation 'com.github.Tripl3Dev:PrettyStateView:2.0.0'
+	        implementation 'com.github.Tripl3Dev:PrettyStateView:2.1.1'
 	}
 
   ```
