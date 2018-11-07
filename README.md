@@ -93,7 +93,19 @@ allprojects {
 
 - You can get view back to make any action on it 
  ```kotlin 
-    SetState(StateConstantType : Integer) : View
+   var stateView =  SetState(StateConstantType : Integer) : View
+   stateView.setOnClickListener{
+    Toast.makeText(this,"On Whole view clicked do ....",Toast.LENGTH_SHORT).show()
+   }
+   
+   // or find specific view and do action on it 
+   stateView.findViewById<TextView>(R.id.textError).apply {
+            text = "Error Message"		 // set Your error text 
+            // set on click listener to the view
+	    setOnClickListener {
+                Toast.makeText(this@MainActivity, "view error state clicked", Toast.LENGTH_SHORT).show()
+            }
+        }
  ```
 
 
