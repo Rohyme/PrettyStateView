@@ -32,6 +32,8 @@ allprojects {
   
   
   # Usage 
+-  For using it in java [HERE](https://github.com/Rohyme/PrettyStateView/blob/master/javaReadme.md) 
+	
 -  Intialize the StatesConfigFactory singelton 
  
     ```kotlin
