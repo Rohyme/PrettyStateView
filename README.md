@@ -1,6 +1,8 @@
 # PrettyStateView
 
-PrettyStateView is a light library to set view states such as Loading , Error , Empty or even Custom views you make .
+[![](https://jitpack.io/v/Rohyme/PrettyStateView.svg)](https://jitpack.io/#Rohyme/PrettyStateView)
+
+PrettyStateView is a light library to set view states such as Loading , Error , Empty or even Custom views you make with just one line without using any XMLs
 
 
 <img src="https://github.com/Tripl3Dev/PrettyStateView/blob/master/states.gif">
@@ -23,7 +25,7 @@ allprojects {
 - #### Step 2. Add the dependency
  ```
  	dependencies {
-	        implementation 'com.github.Tripl3Dev:PrettyStateView:2.1.1'
+	        implementation 'com.github.Tripl3Dev:PrettyStateView:2.2.1'
 	}
 
   ```
