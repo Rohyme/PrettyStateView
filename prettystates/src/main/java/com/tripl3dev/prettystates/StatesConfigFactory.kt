@@ -32,18 +32,20 @@ class StatesConfigFactory private constructor() {
      * Init default views
      */
 
-    fun initDefaultViews() {
+    fun initDefaultViews(): StatesConfigFactory {
         viewsMap.put(StatesConstants.EMPTY_STATE, R.layout.prettystates_default_empty_view)
         viewsMap.put(StatesConstants.ERROR_STATE, R.layout.prettystates_default_error_view)
         viewsMap.put(StatesConstants.LOADING_STATE, R.layout.prettystates_default_loading_view)
         viewsMap.put(StatesConstants.NORMAL_STATE, R.id.state_view_layout)
+        return this
     }
 
     /**
      * Init Normal view
      */
-    fun initViews() {
+    fun initViews(): StatesConfigFactory {
         viewsMap.put(StatesConstants.NORMAL_STATE, R.id.state_view_layout)
+        return this
     }
 
 
@@ -53,9 +55,10 @@ class StatesConfigFactory private constructor() {
      *@param viewStateType -> Constant for your new stateView
      * @param customLayout -> Your new stateView layout
      */
-    fun addStateView(viewStateType: Int, @LayoutRes customLayout: Int) {
+    fun addStateView(viewStateType: Int, @LayoutRes customLayout: Int): StatesConfigFactory {
         if (viewsMap[viewStateType] == null)
             viewsMap.put(viewStateType, customLayout)
+        return this
     }
 
     /**
