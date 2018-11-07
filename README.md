@@ -1,6 +1,6 @@
 # PrettyStateView
 
-PrettyStateView is a light library to set view states such As Loading , Error , Empty or even Custom views You make .
+PrettyStateView is a light library to set view states such as Loading , Error , Empty or even Custom views you make .
 
 
 <img src="https://github.com/Tripl3Dev/PrettyStateView/blob/master/states.gif">
@@ -30,7 +30,7 @@ allprojects {
   
   
   # Usage 
--  Intialize the  StatesConfigFactory singelton 
+-  Intialize the StatesConfigFactory singelton 
  
     ```kotlin
     // App class onCreate
@@ -40,8 +40,8 @@ allprojects {
         }
     ```
 - You should initialize default views or just the normal view  :
-	- use ``` initDefaultViews()``` for intialize Normal , Error , Loading and Empty default layouts comming with the lib    
-	- use ```initViews()``` to intialize just Normal View 
+	- Use ``` initDefaultViews()``` for intialize Normal , Error , Loading and Empty default layouts comming with the lib    
+	- Use ```initViews()``` to intialize just Normal View 
 > You must use one of them after intializing StateConfigFactory
   
 - You can init your own layouts by using 
@@ -53,7 +53,7 @@ allprojects {
             .setDefaultLoadingView(R.layout.loading_view)
      ```
  
- - Add your custom View while intializing stateFactory 
+ - Add your custom view while intializing StateFactory 
  
    ```kotlin 
    StatesConfigFactory.intialize().addStateView(YOUR_CUSTOM_STATE_VIEW_INTEGER_CONSTANT,R.layout.your_custom_layout) 
@@ -65,7 +65,7 @@ allprojects {
     StatesConfigFactory.get().addStateView(YOUR_CUSTOM_STATE_VIEW_INTEGER_CONSTANT,R.layout.your_custom_layout)
     ```
 
-- finally you can use set The stateView to any view you want just with
+- Finally you can use set The stateView to any view you want just with
  
     ```kotlin
     yourView.setState(StatesConstants.EMPTY_STATE)
@@ -83,7 +83,7 @@ allprojects {
     yourView.setState(YOUR_CUSTOM_STATE_VIEW_INTEGER_CONSTANT)
     ```     
 
-- You can go back to the content states (Your original state) with 
+- You can go back to the content states (your original state) with 
   
     ```kotlin
     yourView.setState(StatesConstants.NORMAL_STATE)
@@ -96,9 +96,9 @@ allprojects {
     Toast.makeText(this,"On Whole view clicked do ....",Toast.LENGTH_SHORT).show()
    }
    
-   // or find specific view and do action on it 
+   // Or find specific view and do action on it 
    stateView.findViewById<TextView>(R.id.textError).apply {
-            text = "Error Message"		 // set Your error text 
+            text = "Error Message"		 // Set Your error text 
             // set on click listener to the view
 	    setOnClickListener {
                 Toast.makeText(this@MainActivity, "view error state clicked", Toast.LENGTH_SHORT).show()
