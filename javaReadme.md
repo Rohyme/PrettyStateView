@@ -1,4 +1,4 @@
- # Usage 
+ # Usage in java
 -  Intialize the StatesConfigFactory singelton 
  
     ```java
