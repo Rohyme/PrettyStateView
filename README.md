@@ -40,8 +40,9 @@ allprojects {
         }
     ```
 - You should initialize default views or just the normal view  :
-  use ``` initDefaultViews()``` for intialize Normal , Error , Loading and Empty default layouts comming with the lib    
-  use ```initViews()``` to intialize just Normal View 
+	- use ``` initDefaultViews()``` for intialize Normal , Error , Loading and Empty default layouts comming with the lib    
+	- use ```initViews()``` to intialize just Normal View 
+> You must use one of them after intializing StateConfigFactory
   
 - You can init your own layouts by using 
      ```kotlin
@@ -80,10 +81,7 @@ allprojects {
     
     ```kotlin
     yourView.setState(YOUR_CUSTOM_STATE_VIEW_INTEGER_CONSTANT)
-    ```
-
-    * Note : Your view shouldn't be wrap content (Height or Width)
-     
+    ```     
 
 - You can go back to the content states (Your original state) with 
   
