@@ -87,6 +87,8 @@ allprojects {
     ```kotlin
     yourView.setState(YOUR_CUSTOM_STATE_VIEW_INTEGER_CONSTANT)
     ```     
+    
+    > Your view shouldn't be the root view , Should have parent container view
 
 - You can go back to the content states (your original state) with 
   
