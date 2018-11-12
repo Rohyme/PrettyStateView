@@ -1,6 +1,7 @@
 # PrettyStateView
 
-[![](https://jitpack.io/v/Rohyme/PrettyStateView.svg)](https://jitpack.io/#Rohyme/PrettyStateView)
+[![](https://jitpack.io/v/Rohyme/PrettyStateView.svg)](https://jitpack.io/#Rohyme/PrettyStateView)  [![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-PrettyStateView-green.svg?style=flat )]( https://android-arsenal.com/details/1/7299 )
+
 
 PrettyStateView is a light library to set view states such as Loading , Error , Empty or even Custom views you make with just one line without using any XMLs
 
