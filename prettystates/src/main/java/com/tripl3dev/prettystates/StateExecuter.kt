@@ -19,6 +19,7 @@ fun View.setState(stateType: Int): View {
         stateConfig!!.getStateView(stateType).inflateToView(this.context)
     }
     var parentView: ViewGroup? = null
+
     if (this.parent is ViewGroup && this.parent !is RecyclerView) {
         parentView = this.parent as ViewGroup
     }
@@ -39,8 +40,8 @@ fun View.setState(stateType: Int): View {
                 } else {
                     parentView.addView(stateView)
                 }
-
-            } else {
+            }
+            else {
                 val index = parentView.indexOfChild(view)
                 parentView.removeView(view)
                 parentView.addView(stateView, index)
@@ -54,6 +55,7 @@ fun View.setState(stateType: Int): View {
                 this.visibility = View.VISIBLE
             }
         }
+
     }
     return stateView
 }
