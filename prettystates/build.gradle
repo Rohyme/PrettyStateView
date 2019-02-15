@@ -4,7 +4,7 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'com.github.dcendents.android-maven'
 group='com.github.Tripl3Dev'
-version='2.1.0'
+version='2.2.0'
 
 android {
     compileSdkVersion 28
@@ -15,7 +15,7 @@ android {
         minSdkVersion 17
         targetSdkVersion 28
         versionCode 1
-        versionName "1.0"
+        versionName "2.2.2"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 

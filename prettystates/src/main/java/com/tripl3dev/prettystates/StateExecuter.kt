@@ -12,6 +12,12 @@ import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import android.widget.TableLayout
 
+/**
+ * Written By Mohamed Rohyme
+ *
+ * Modified By Mahmoud Abd-Elaal
+ */
+
 
 fun View.setState(stateType: Int): View {
     Log.i("STATE_CHANGED", "State Type  =  $stateType")
