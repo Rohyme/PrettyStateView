@@ -26,8 +26,8 @@ allprojects {
 - #### Step 2. Add the dependency
  ```
  	dependencies {
-	        implementation 'com.github.Tripl3Dev:PrettyStateView:2.2.1'
-	}
+	        implementation 'com.github.Rohyme:PrettyStateView:2.3.0'
+		}
 
   ```
   
@@ -112,6 +112,11 @@ allprojects {
             }
         }
  ```
+ 
+ 
+ ## Contributors
+ 
+ [Mahmoud Abdelaal Mahmoud](https://github.com/MahmoudAbdelaalMahmoud)
 
 
 # License
