@@ -1,6 +1,9 @@
 # PrettyStateView
 
-PrettyStateView is a light library to set view states such as Loading , Error , Empty or even Custom views you make .
+[![](https://jitpack.io/v/Rohyme/PrettyStateView.svg)](https://jitpack.io/#Rohyme/PrettyStateView)  [![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-PrettyStateView-green.svg?style=flat )]( https://android-arsenal.com/details/1/7299 )
+
+
+PrettyStateView is a light library to set view states such as Loading , Error , Empty or even Custom views you make with just one line without using any XMLs
 
 
 <img src="https://github.com/Tripl3Dev/PrettyStateView/blob/master/states.gif">
@@ -23,13 +26,15 @@ allprojects {
 - #### Step 2. Add the dependency
  ```
  	dependencies {
-	        implementation 'com.github.Tripl3Dev:PrettyStateView:2.1.1'
+	        implementation 'com.github.Tripl3Dev:PrettyStateView:2.2.1'
 	}
 
   ```
   
   
   # Usage 
+-  For using it in java [HERE](https://github.com/Rohyme/PrettyStateView/blob/master/javaReadme.md) 
+	
 -  Intialize the StatesConfigFactory singelton 
  
     ```kotlin
@@ -82,6 +87,8 @@ allprojects {
     ```kotlin
     yourView.setState(YOUR_CUSTOM_STATE_VIEW_INTEGER_CONSTANT)
     ```     
+    
+    > Your view shouldn't be the root view , Should have parent container view
 
 - You can go back to the content states (your original state) with 
   
