@@ -26,9 +26,8 @@ allprojects {
 - #### Step 2. Add the dependency
  ```
  	dependencies {
-	        implementation 'com.github.Rohyme:PrettyStateView:2.3.0'
+	        implementation 'com.github.Rohyme:PrettyStateView:3.0.0'	
 		}
-
   ```
   
   
