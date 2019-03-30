@@ -1,9 +1,8 @@
 package com.tripl3dev.prettystateslib
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.tripl3dev.prettystates.StatesConfigFactory
 import com.tripl3dev.prettystates.StatesConstants
 import com.tripl3dev.prettystates.setState

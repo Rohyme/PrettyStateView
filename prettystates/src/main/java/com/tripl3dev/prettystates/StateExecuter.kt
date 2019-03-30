@@ -65,10 +65,14 @@ fun View.setState(stateType: Int): View {
 
 
         if (this.visibility == View.VISIBLE) {
-            this.visibility = View.INVISIBLE
+            if(parentView is LinearLayout){
+                this.visibility = View.GONE
+            }else{
+                this.visibility = View.INVISIBLE
+            }
         }
     } else {
-        if (this.visibility == View.INVISIBLE) {
+        if (this.visibility == View.INVISIBLE||this.visibility == View.GONE) {
             this.visibility = View.VISIBLE
         }
     }
