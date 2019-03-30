@@ -1,8 +1,6 @@
 package com.tripl3dev.prettystates
 
 import android.content.Context
-import android.support.constraint.ConstraintLayout
-import android.support.constraint.ConstraintSet
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +9,8 @@ import android.widget.FrameLayout
 import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import android.widget.TableLayout
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.constraintlayout.widget.ConstraintSet
 
 /**
  * Written By Mohamed Rohyme

@@ -1,9 +1,9 @@
 package com.tripl3dev.prettystates
 
 import android.content.Context
-import android.support.annotation.LayoutRes
 import android.util.SparseArray
 import android.view.View
+import androidx.annotation.LayoutRes
 
 
 class StatesConfigFactory private constructor() {
