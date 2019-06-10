@@ -116,6 +116,11 @@ allprojects {
  ## Contributors
  
  [Mahmoud Abdelaal Mahmoud](https://github.com/MahmoudAbdelaalMahmoud)
+ 
+  ### Applications using prettyStateView
+  
+  - [AnYme](https://github.com/zunjae/AnYme)
+
 
 
 # License
