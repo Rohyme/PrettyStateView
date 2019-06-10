@@ -119,7 +119,7 @@ allprojects {
  
   ### Applications using prettyStateView
   
-  - [AnYme](https://github.com/zunjae/AnYme)
+  - [zunjae/AnYme](https://github.com/zunjae/AnYme)
 
 
 
