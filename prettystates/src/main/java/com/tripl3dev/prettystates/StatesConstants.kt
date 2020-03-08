@@ -1,11 +1,10 @@
 package com.tripl3dev.prettystates
 
-class StatesConstants {
-    companion object {
-        const val LOADING_STATE = -2731992
-        const val ERROR_STATE = -2631992
-        const val EMPTY_STATE = -2531992
-        const val NORMAL_STATE = -2431992
-        val STATE_VIEW_ID = R.id.state_view_layout
-    }
+
+object StatesConstants {
+    val ERROR_STATE = R.id.default_error_pretty_state
+    val EMPTY_STATE = R.id.default_empty_pretty_state
+    val NORMAL_STATE = R.id.default_normal_pretty_state
+    val LOADING_STATE = R.id.default_loading_pretty_state
+
 }

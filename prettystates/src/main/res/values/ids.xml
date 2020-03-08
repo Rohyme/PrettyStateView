@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="state_view_layout" type="id"></item>
+    <item name="default_loading_pretty_state" type="id" />
+    <item name="default_error_pretty_state" type="id" />
+    <item name="default_empty_pretty_state" type="id" />
+    <item name="default_normal_pretty_state" type="id" />
+    <item name="related_state_view_id_key" type="id" />
+    <item name="related_state_view_config_key" type="id" />
 </resources>

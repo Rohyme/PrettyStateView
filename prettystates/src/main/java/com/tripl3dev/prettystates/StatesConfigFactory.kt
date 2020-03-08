@@ -1,38 +1,25 @@
 package com.tripl3dev.prettystates
 
 import android.content.Context
+import android.util.Log
 import android.util.SparseArray
+import android.view.LayoutInflater
 import android.view.View
 import androidx.annotation.LayoutRes
 
 
-class StatesConfigFactory private constructor() {
+object StatesConfigFactory {
     private var viewsMap: SparseArray<Int> = SparseArray()
 
-    companion object {
-        internal var instance: StatesConfigFactory? = null
-        fun intialize(): StatesConfigFactory {
-            if (instance == null)
-                instance = StatesConfigFactory()
-            return instance as StatesConfigFactory
-        }
-
-        fun get(): StatesConfigFactory {
-            if (instance == null) {
-                throw Throwable("Please use intialize fun in App Class OnCreate Method or Before get Instance Method")
-            } else {
-                return instance as StatesConfigFactory
-            }
-        }
-
+    init {
+        initDefaultViews()
     }
-
 
     /**
      * Init default views
      */
 
-    fun initDefaultViews(): StatesConfigFactory {
+    private fun initDefaultViews(): StatesConfigFactory {
         viewsMap.put(StatesConstants.EMPTY_STATE, R.layout.prettystates_default_empty_view)
         viewsMap.put(StatesConstants.ERROR_STATE, R.layout.prettystates_default_error_view)
         viewsMap.put(StatesConstants.LOADING_STATE, R.layout.prettystates_default_loading_view)
@@ -41,19 +28,10 @@ class StatesConfigFactory private constructor() {
     }
 
     /**
-     * Init Normal view
-     */
-    fun initViews(): StatesConfigFactory {
-        viewsMap.put(StatesConstants.NORMAL_STATE, R.id.state_view_layout)
-        return this
-    }
-
-
-    /**
      * Adding new stateView
      *
      *@param viewStateType -> Constant for your new stateView
-     * @param customLayout -> Your new stateView layout
+     *@param customLayout -> Your new stateView layout
      */
     fun addStateView(viewStateType: Int, @LayoutRes customLayout: Int): StatesConfigFactory {
         if (viewsMap[viewStateType] == null)
@@ -103,7 +81,7 @@ class StatesConfigFactory private constructor() {
      */
     fun getStateView(viewStateType: Int, context: Context): View {
         if (viewsMap.get(viewStateType) != null) {
-            return viewsMap[viewStateType].inflateToView(context)
+            return LayoutInflater.from(context).inflate(viewsMap[viewStateType], null, false)
         } else {
             throw Throwable("There isn't any stateView with that State Type")
         }
@@ -137,6 +115,31 @@ class StatesConfigFactory private constructor() {
     fun setDefaultLoadingLayout(@LayoutRes loadingLayout: Int): StatesConfigFactory {
         viewsMap.put(StatesConstants.LOADING_STATE, loadingLayout)
         return this
+    }
+
+    /**
+     * find type with layout
+     * if the type not exit it will be created then  added to the view map
+     * @return StateType
+     */
+
+    fun findLayout(@LayoutRes layout: Int): Int {
+        var keyIndex = getKeyOfValue(layout)
+        if (keyIndex == null) {
+            keyIndex = generateRandomId()
+            viewsMap.put(keyIndex,layout)
+            Log.e("keyIndex -> ","$keyIndex for $layout")
+        }
+        return  keyIndex
+    }
+
+    private fun getKeyOfValue(@LayoutRes layout: Int): Int? {
+        for (i in 0 until  viewsMap.size()){
+            if (viewsMap.valueAt(i) == layout){
+                return viewsMap.keyAt(i)
+            }
+        }
+        return null
     }
 
 }

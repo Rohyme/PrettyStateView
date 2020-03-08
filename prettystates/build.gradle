@@ -7,13 +7,13 @@ group='com.github.Tripl3Dev'
 version='2.3.0'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
 
 
 
     defaultConfig {
         minSdkVersion 15
-        targetSdkVersion 28
+        targetSdkVersion 29
         versionCode 1
         versionName "2.2.2"
 
