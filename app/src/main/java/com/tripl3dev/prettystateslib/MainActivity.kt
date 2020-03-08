@@ -13,58 +13,73 @@ import kotlin.system.measureNanoTime
 import kotlin.system.measureTimeMillis
 
 class MainActivity : AppCompatActivity() {
-    lateinit var testingView: View
-    val CUSTOM_STATE = 23232
+    private  val viewsList by lazy {
+        listOf(stateButton,imageView,testingTextView)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        testingView = testingTextView
-    }
-
-    fun onLoadingClicked(view: View) {
-        measureTimeMillis {
-            testingView.setState(StatesConstants.LOADING_STATE,false)
-        }.let {
-            Log.e("takes time ","$it")
+        changeStatusBt.setOnClickListener {
+            changeStatus()
         }
     }
-
-    fun onErrorClicked(view: View) {
-        measureTimeMillis {
-            testingView.setState(StatesConstants.ERROR_STATE,false)
-        }.let {
-            Log.e("takes time ","$it")
+var currentStatus  : Int = 0
+    private fun changeStatus() {
+        when (currentStatus){
+            0 -> loadingStatus()
+            1 -> errorStatus()
+            2 -> customStatus()
+            3 -> emptyStatus()
+            4 -> normalStatus()
         }
+        currentStatus++
     }
 
-    fun onEmptyClicked(view: View) {
-        measureTimeMillis {
-            testingView.setState(StatesConstants.EMPTY_STATE,false).let {
+    private fun emptyStatus() {
+        viewsList.forEach {
+            it.setState(StatesConstants.EMPTY_STATE,false)
+        }
+        changeCurrentStateText("empty")
+    }
+
+    private fun normalStatus() {
+        currentStatus = 0
+        viewsList.forEach {
+            it.setState(StatesConstants.NORMAL_STATE,false)
+        }
+        changeCurrentStateText("normal")
+    }
+
+    private fun customStatus() {
+        viewsList.forEach {
+            it.setLayoutState(R.layout.custom_state_view,false)
+        }
+        changeCurrentStateText("custom")
+    }
+
+    private fun errorStatus() {
+        viewsList.forEach {
+            it.setState(StatesConstants.ERROR_STATE,false).let {
                 it.setOnClickListener {
-                    onNormalClicked(it)
+                    changeStatus()
                 }
             }
-        }.let {
-            Log.e("takes time ","$it")
         }
+        changeCurrentStateText("error")
     }
 
-    fun onNormalClicked(view: View) {
-        measureTimeMillis {
-            testingView.setState(StatesConstants.NORMAL_STATE,false)
-        }.let {
-            Log.e("takes time ","$it")
+    private fun loadingStatus() {
+        viewsList.forEach {
+            it.setState(StatesConstants.LOADING_STATE,false)
         }
+        changeCurrentStateText("loading")
     }
 
-    fun onCustomClicked(view: View) {
-        measureTimeMillis {
-            testingView.setLayoutState( R.layout.custom_state_view,false)
-        }.let {
-            print("takes $it")
-        }
+    private fun changeCurrentStateText(state : String){
+        textView.text = "current state is $state state"
     }
+
 
 
 }

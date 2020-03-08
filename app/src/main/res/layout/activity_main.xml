@@ -14,51 +14,49 @@
         android:layout_weight="1"
         android:gravity="center"
         android:text="This is the normal Case" />
-
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="0dp"
+        android:layout_weight="2" >
 
         <Button
-            android:layout_width="0dp"
+            android:id="@+id/stateButton"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="10sp"
-            android:layout_weight="1"
-            android:text="Loading"
-            android:onClick="onLoadingClicked"
-            />
+            android:layout_margin="10dp"
+            android:text="state button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/stateButton" />
 
         <Button
-            android:layout_width="0dp"
+            android:id="@+id/changeStatusBt"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="10sp"
-            android:layout_weight="1"
-            android:onClick="onErrorClicked"
-            android:text="Error" />
+            android:gravity="center"
+            android:text="change status"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-        <Button
-            android:layout_width="0dp"
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="10sp"
-            android:layout_weight="1"
-            android:onClick="onEmptyClicked"
-            android:text="empty" />
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:textSize="10sp"
-            android:layout_weight="1"
-            android:onClick="onNormalClicked"
-            android:text="Normal" />
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="onCustomClicked"
-            android:textSize="10sp"
-            android:text="custom" />
-
-    </LinearLayout>
+            android:text="current status  is Normal"
+            app:layout_constraintBottom_toTopOf="@+id/changeStatusBt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
